@@ -9,10 +9,14 @@ def display_all_students():
 
 
 # stores student details
-students = ["Lucas Very Cool", "Danny B", "Ollie Od", "Rhys Brother", "Oooo Zac Moore"]
+students = [["Lucas Very Cool",10], ["Danny B",0], ["Ollie Od",12], ["Rhys Brother", 65], ["Oooo Zac Moore", 112]]
+
 
 # adding a student
-new_student = input("Please enter a new student:")
+student_name = input("Please enter a new student:")
+student_credit_total = int(input("Enter total NCEA level 1 credits"))
+new_student = [student_name, student_credit_total]
+
 students.append(new_student)
 
 # Display all students
@@ -29,6 +33,7 @@ display_all_students()
 student_num = int(input("What is the number of the student you wish to change? "))
 new_name = input("Enter new name: ")
 students[student_num-1] = (new_name)
+new_total = int(input("Enter new credit total: "))  
 
 # display all students
 display_all_students()
