@@ -2,8 +2,8 @@
 
 # Create a fuction which displays all the books and their information
 def display_all_books():
-    for index in range(0, len(students)):
-        print(index+1, students[index])
+    for index in range(0, len(books)):
+        print(index+1, books[index])
 
 # Create a function which displays the menu
 def display_menu():
@@ -36,12 +36,16 @@ while show_menu == True :
             # Redisplay menu
             display_menu()
             
-# Display all books
-if menu_option = 1:
-    display_all_books()
-
-# add a student 
-elif menu_option:
-    
+            # Display all books
+            if menu_option == 1:
+                display_all_books()
             
-    
+            # add a student 
+            elif menu_option == 2:
+                book_name = input("Enter the name of a book: ")
+                author_name = input("Enter the name of the author: ")
+                book_price = int(input("Enter the price of the book: "))
+                
+                new_book = [book_name, author_name, book_price]
+                
+                books.append(new_book)
