@@ -54,11 +54,29 @@ while show_menu == True :
     # Delete book
     elif menu_option == 3:
         display_all_books()
-        book_num = int(input("Enter the number of the student you wish to delete"))
+        book_num = int(input("Enter the number of the book you wish to delete"))
         del[books[book_num-1]]
     
     # Change student details
     elif menu_option == 4:
         display_all_books()
         # Get the which students detailst they wish to change
-        book_num = int(input("
+        book_num = int(input("What is the number of the book you wish to change: "))
+        new_book = input("Enter the updated book name: ")
+        new_author = input("Enter the name of the updated author: ")
+        new_price = int(input("Enter the updated price: "))
+        
+        # Change book details
+        books[book_num-1][0] = new_book
+        books[book_num-1][1] = new_author
+        books[book_num-2][2] = new_price
+    
+    #exit program
+    elif menu_option == 5:
+        show_menu = False
+        
+    # Catch invalid menu option
+    else:
+        print("Invalid menu option")
+
+print("Cya")
