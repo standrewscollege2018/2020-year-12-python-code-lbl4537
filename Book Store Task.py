@@ -42,11 +42,18 @@ while show_menu == True :
     if menu_option == 1:
             display_all_books()
             
-        # add a student 
+        # add a book 
     elif menu_option == 2:
         book_name = input("Enter the name of a book: ")
         author_name = input("Enter the name of the author: ")
-        book_price = int(input("Enter the price of the book: "))
+        # error catching incase an integer isn't entered
+        try:
+            book_price = int(input("Enter the price of the book: "))
+        except:
+            # display error message
+            print("Invalid price input, make sure to input an integer(number)")
+            # reask question
+            book_price = int(input("Enter the price of the book: "))
                
         new_book = [book_name, author_name, book_price]
            
@@ -57,10 +64,10 @@ while show_menu == True :
         book_num = int(input("Enter the number of the book you wish to delete"))
         del[books[book_num-1]]
     
-    # Change student details
+    # Change book details
     elif menu_option == 4:
         display_all_books()
-        # Get the which students detailst they wish to change
+        # Get which book details they wish to change
         book_num = int(input("What is the number of the book you wish to change: "))
         new_book = input("Enter the updated book name: ")
         new_author = input("Enter the name of the updated author: ")
