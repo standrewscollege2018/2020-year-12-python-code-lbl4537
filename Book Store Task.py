@@ -2,8 +2,10 @@
 
 # Create a fuction which displays all the books and their information
 def display_all_books():
+    print("/nLIST OF BOOKS")
     for index in range(0, len(books)):
-        print(index+1, books[index])
+        print("{}. {} Author: {}. Price: ${}".format(index+1, books[index][0], books[index][1], books[index][2]))
+  
 
 # Create a function which displays the menu
 def display_menu():
@@ -36,16 +38,27 @@ while show_menu == True :
             # Redisplay menu
             display_menu()
             
-            # Display all books
-            if menu_option == 1:
-                display_all_books()
+        # Display all books
+    if menu_option == 1:
+            display_all_books()
             
-            # add a student 
-            elif menu_option == 2:
-                book_name = input("Enter the name of a book: ")
-                author_name = input("Enter the name of the author: ")
-                book_price = int(input("Enter the price of the book: "))
-                
-                new_book = [book_name, author_name, book_price]
-                
-                books.append(new_book)
+        # add a student 
+    elif menu_option == 2:
+        book_name = input("Enter the name of a book: ")
+        author_name = input("Enter the name of the author: ")
+        book_price = int(input("Enter the price of the book: "))
+               
+        new_book = [book_name, author_name, book_price]
+           
+        books.append(new_book)
+    # Delete book
+    elif menu_option == 3:
+        display_all_books()
+        book_num = int(input("Enter the number of the student you wish to delete"))
+        del[books[book_num-1]]
+    
+    # Change student details
+    elif menu_option == 4:
+        display_all_books()
+        # Get the which students detailst they wish to change
+        book_num = int(input("
